@@ -74,8 +74,8 @@ window.setTimeout(function () {
       chat += opts[a].text + " ";
     }
 
-    if (chat.indexOf("Seren spirit gifts you") > -1) {
-      let currentSerenSpiritDetected = chat.match(/\[\d+:\d+:\d+\] The Seren spirit gifts you : (\d+ x [A-Za-z\s-'()1-4]+)/);
+    if (chat.indexOf("You received") > -1) {
+      let currentSerenSpiritDetected = chat.match(/\[\d+:\d+:\d+\] You received: (\d+ x [A-Za-z\s-'()1-4]+)/);
       if (currentSerenSpiritDetected[0].trim() === lastSerenSpiritDetected) {
         return;
       }
@@ -94,13 +94,13 @@ window.setTimeout(function () {
 
   function showItems() {
     $(".itemList").empty();
-    $(".itemList").append(`<li class="list-group-item total">Total Seren Spirits collected: <span style="font-weight:bold">${JSON.parse(localStorage.getItem("serenData")).length}</span></li>`);
+    $(".itemList").append(`<li class="list-group-item total">Total drops: <span style="font-weight:bold">${JSON.parse(localStorage.getItem("serenData")).length}</span></li>`);
     if (localStorage.getItem("serenTotal") === "total") {
-      $(".itemList").append(`<li class="list-group-item header" data-show="history" title="Click to show History">Seren Item Totals</li>`);
+      $(".itemList").append(`<li class="list-group-item header" data-show="history" title="Click to show History">Drop Totals</li>`);
       let total = getTotal();
       Object.keys(total).sort().forEach(item => $(".itemList").append(`<li class="list-group-item">${item}: ${total[item]}</li>`))
     } else {
-      $(".itemList").append(`<li class="list-group-item header" data-show="total" title="Click to show Totals">Seren Item History</li>`);
+      $(".itemList").append(`<li class="list-group-item header" data-show="total" title="Click to show Totals">Drop History</li>`);
       saveData.slice().reverse().map(item => {
         $(".itemList").append(`<li class="list-group-item" title="${new Date(item.time).toLocaleString()}">${item.item}</li>`)
       })
@@ -116,7 +116,7 @@ window.setTimeout(function () {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username: "Zero's Seren Tracker",
+            username: "Corrupted Drop Tracker",
             content: `${new Date(getItem.time).toLocaleString()}: Received - ${getItem.item}`
           })
         })
