@@ -1,12 +1,15 @@
-# SerenTracker
+# CorruptedDropTracker
 
-Tracks Seren Spirit drops gained via the chat window.
+Tracks Corrupted Monster drops gained via the chat window.
+
+Built using:
+https://github.com/ZeroGwafa/SerenTracker
 
 ## Installation:
 
 Install by copying this either copy pasting the following link in your browser.
 
-alt1://addapp/https://zerogwafa.github.io/SerenTracker/appconfig.json
+https://zerogwafa.github.io/SerenTracker/
 
 Or, by going to the following link in the Alt1 Browser
 
