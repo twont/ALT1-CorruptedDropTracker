@@ -9,7 +9,7 @@ https://github.com/ZeroGwafa/SerenTracker
 
 Install by copying this either copy pasting the following link in your browser.
 
-alt1://addapp/https://twont.github.io/ALT1-CorruptedDropTracker/
+alt1://addapp/https://twont.github.io/ALT1-CorruptedDropTracker/appconfig.json
 
 ## Instructions:
 
