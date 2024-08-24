@@ -3,13 +3,13 @@ A1lib.identifyApp("appconfig.json");
 
 window.setTimeout(function () {
 
-  const appColor = A1lib.mixColor(245, 151, 0);
+  const appColor = A1lib.mixColor(255, 111, 0);
 
   // Set Chat reader
   let reader = new Chatbox.default();
   reader.readargs = {
     colors: [
-        A1lib.mixColor(245, 151, 0), //Seren text color
+        A1lib.mixColor(255, 111, 0), //Seren text color
       // A1lib.mixColor(127,169,255), //Test Chat text color
     ],
     backwards: true,
