@@ -3,13 +3,13 @@ A1lib.identifyApp("appconfig.json");
 
 window.setTimeout(function () {
 
-  const appColor = A1lib.mixColor(0, 255, 255);
+  const appColor = A1lib.mixColor(245, 151, 0);
 
   // Set Chat reader
   let reader = new Chatbox.default();
   reader.readargs = {
     colors: [
-      A1lib.mixColor(0, 255, 255), //Seren text color
+        A1lib.mixColor(245, 151, 0), //Seren text color
       // A1lib.mixColor(127,169,255), //Test Chat text color
     ],
     backwards: true,
@@ -94,13 +94,13 @@ window.setTimeout(function () {
 
   function showItems() {
     $(".itemList").empty();
-    $(".itemList").append(`<li class="list-group-item total">Total drops: <span style="font-weight:bold">${JSON.parse(localStorage.getItem("serenData")).length}</span></li>`);
+    $(".itemList").append(`<li class="list-group-item total">Total lucky drops: <span style="font-weight:bold">${JSON.parse(localStorage.getItem("serenData")).length}</span></li>`);
     if (localStorage.getItem("serenTotal") === "total") {
-      $(".itemList").append(`<li class="list-group-item header" data-show="history" title="Click to show History">Drop Totals</li>`);
+      $(".itemList").append(`<li class="list-group-item header" data-show="history" title="Click to show History">Lucky Drop Totals</li>`);
       let total = getTotal();
       Object.keys(total).sort().forEach(item => $(".itemList").append(`<li class="list-group-item">${item}: ${total[item]}</li>`))
     } else {
-      $(".itemList").append(`<li class="list-group-item header" data-show="total" title="Click to show Totals">Drop History</li>`);
+      $(".itemList").append(`<li class="list-group-item header" data-show="total" title="Click to show Totals">Lucky Drop History</li>`);
       saveData.slice().reverse().map(item => {
         $(".itemList").append(`<li class="list-group-item" title="${new Date(item.time).toLocaleString()}">${item.item}</li>`)
       })
@@ -116,7 +116,7 @@ window.setTimeout(function () {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username: "Corrupted Drop Tracker",
+            username: "Lucky Drop Tracker",
             content: `${new Date(getItem.time).toLocaleString()}: Received - ${getItem.item}`
           })
         })
