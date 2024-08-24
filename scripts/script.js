@@ -74,8 +74,8 @@ window.setTimeout(function () {
       chat += opts[a].text + " ";
     }
 
-    if (chat.indexOf("You received") > -1) {
-      let currentSerenSpiritDetected = chat.match(/\[\d+:\d+:\d+\] You received: (\d+ x [A-Za-z\s-'()1-4]+)/);
+    if (chat.indexOf("You receive") > -1) {
+      let currentSerenSpiritDetected = chat.match(/\[\d+:\d+:\d+\] You receive: (\d+ x [A-Za-z\s-'()1-4]+)/);
       if (currentSerenSpiritDetected[0].trim() === lastSerenSpiritDetected) {
         return;
       }
@@ -117,7 +117,7 @@ window.setTimeout(function () {
           },
           body: JSON.stringify({
             username: "Lucky Drop Tracker",
-            content: `${new Date(getItem.time).toLocaleString()}: Received - ${getItem.item}`
+            content: `${new Date(getItem.time).toLocaleString()}: Receive - ${getItem.item}`
           })
         })
     }
