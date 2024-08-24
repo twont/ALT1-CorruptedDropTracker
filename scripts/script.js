@@ -74,8 +74,8 @@ window.setTimeout(function () {
       chat += opts[a].text + " ";
     }
 
-    if (chat.indexOf("You receive") > -1) {
-      let currentSerenSpiritDetected = chat.match(/\[\d+:\d+:\d+\] You receive: (\d+ x [A-Za-z\s-'()1-4]+)/);
+    if (chat.indexOf("Your Luck of the Dwarves ring shines brightly. You receive") > -1) {
+      let currentSerenSpiritDetected = chat.match(/\[\d+:\d+:\d+\] Your Luck of the Dwarves ring shines brightly. You receive: (\d+ x [A-Za-z\s-'()1-4]+)/);
       if (currentSerenSpiritDetected[0].trim() === lastSerenSpiritDetected) {
         return;
       }
