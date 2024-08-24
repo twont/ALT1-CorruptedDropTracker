@@ -1,6 +1,6 @@
 {
-  "appName": "CorruptedTracker",
-  "description": "Tracks Corrupted Monster Drops as they appear in the chat box.",
+  "appName": "LuckyDropTracker",
+  "description": "Tracks Lucky Drops as they appear in the chat box.",
   "appUrl": "./index.html",
   "configUrl": "./appconfig.json",
   "iconUrl": "./readme-assets/icon.png",
